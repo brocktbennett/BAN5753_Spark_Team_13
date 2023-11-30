@@ -14,6 +14,7 @@ This project aims to solve a classification problem for XYZ Bank to predict whet
 
 ### Dataset Description
 The dataset is from XYZ Bank's direct marketing campaigns via telephone calls.
+(/Users/brocktbennett/GitHub/BAN5753_Spark_Team_13/Data File)
 - Overview: There were 41,188 rows and 21 columns in the original dataset. 
  - Using spark methodology, we were able to identify the columns and rows in our dataframe 
  - #Read in file
@@ -24,6 +25,10 @@ df=spark.read \
  .csv("/Users/brocktbennett/GitHub/Project Data/mini_project_2/XYZ_Bank_Deposit_Data_Classification-2.csv")
 print("There are",df.count(),"rows",len(df.columns),
       "columns" ,"in the data.") 
+
+
+# Pickled_models
+- In our pickled models folder we have 
 
 # Dataset Overview
 
@@ -72,9 +77,6 @@ print("There are",df.count(),"rows",len(df.columns),
 - `nr.employed`: double (nullable = true)
 - `y`: string (nullable = true)
 
-  
-
-
 ## Methodology
 ### Spark Utilization
 - **Data Processing**: Used Spark for handling large datasets efficiently.
@@ -82,7 +84,7 @@ print("There are",df.count(),"rows",len(df.columns),
 - K Means was conducting using neuro network pipeline within spark. 
 
 ### GitHub for Collaboration
-- **Version Control**: Managed code and documentation versions in our [Github repository](https://github.com/brocktbennett/BAN5753_Spark_Team_13): 
+- **Version Control**: Managed code and documentation versions in our [Github repository](https://github.com/brocktbennett/BAN5753_Spark_Team_13)
 - **File Organization**: Structured repository with data files, model files, and documentation.
 
 ## Repository Structure
