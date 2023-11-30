@@ -14,19 +14,75 @@ This project aims to solve a classification problem for XYZ Bank to predict whet
 
 ### Dataset Description
 The dataset is from XYZ Bank's direct marketing campaigns via telephone calls.
-- **Timeframe**: May 2008 - November 2010
-- **Features**:
-  - Demographics: Age, Job, Marital Status, Education, etc.
-  - Campaign details: Contact type, Last contact month/day, etc.
-  - Economic indicators: Employment rate, Consumer price index, etc.
+- Overview: There were 41,188 rows and 21 columns in the original dataset. 
+ - Using spark methodology, we were able to identify the columns and rows in our dataframe 
+ - #Read in file
+df=spark.read \
+ .option("header","True")\
+ .option("inferSchema","True")\
+ .option("sep",";")\
+ .csv("/Users/brocktbennett/GitHub/Project Data/mini_project_2/XYZ_Bank_Deposit_Data_Classification-2.csv")
+print("There are",df.count(),"rows",len(df.columns),
+      "columns" ,"in the data.") 
+
+# Dataset Overview
+
+## Timeframe
+- May 2008 - November 2010
+
+## Features
+
+### Demographics
+- Age
+- Job
+- Marital Status
+- Education
+- etc.
+
+### Campaign Details
+- Contact type
+- Last contact month/day
+- etc.
+
+### Economic Indicators
+- Employment rate
+- Consumer price index
+- etc.
+
+### Column Names
+- `age`: integer (nullable = true)
+- `job`: string (nullable = true)
+- `marital`: string (nullable = true)
+- `education`: string (nullable = true)
+- `default`: string (nullable = true)
+- `housing`: string (nullable = true)
+- `loan`: string (nullable = true)
+- `contact`: string (nullable = true)
+- `month`: string (nullable = true)
+- `day_of_week`: string (nullable = true)
+- `duration`: integer (nullable = true)
+- `campaign`: integer (nullable = true)
+- `pdays`: integer (nullable = true)
+- `previous`: integer (nullable = true)
+- `poutcome`: string (nullable = true)
+- `emp.var.rate`: double (nullable = true)
+- `cons.price.idx`: double (nullable = true)
+- `cons.conf.idx`: double (nullable = true)
+- `euribor3m`: double (nullable = true)
+- `nr.employed`: double (nullable = true)
+- `y`: string (nullable = true)
+
+  
+
 
 ## Methodology
 ### Spark Utilization
 - **Data Processing**: Used Spark for handling large datasets efficiently.
 - **Machine Learning**: Employed Spark MLlib for training and evaluating models.
+- K Means was conducting using neuro network pipeline within spark. 
 
 ### GitHub for Collaboration
-- **Version Control**: Managed code and documentation versions.
+- **Version Control**: Managed code and documentation versions in our [Github repository](https://github.com/brocktbennett/BAN5753_Spark_Team_13): 
 - **File Organization**: Structured repository with data files, model files, and documentation.
 
 ## Repository Structure
