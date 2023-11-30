@@ -1,16 +1,17 @@
 # Deposit Opening Classification Project
+# BAN5753_Spark_Team_13
+A private GitHub for Team 13 to allow professors and Teacher Assistants to properly grade our work.
 
 ## Project Overview
 This project aims to solve a classification problem for XYZ Bank to predict whether clients will subscribe to a term deposit. We used Spark for data processing and machine learning, and GitHub as a repository for collaboration and version control.
 
 ### Business Problem
-- **Objective**: Identify clients likely to subscribe to a term deposit.
-- **Tasks**:
-  - Conduct Exploratory Data Analysis (EDA) to identify relationships and trends.
-  
-  - Develop a predictive model for future use.
-  - Optionally, perform K-means Clustering.
-  - Compare different supervised learning algorithms.
+ - The objective of the classification is to identify clients who will subscribe (yes/no) for a term deposit. (Variable y: Target function).
+ - The Bank wants us to conduct Exploratory Data Analysis (EDA) to identify relationships, trends in data. For example: correlations, bivariate analysis of target versus input variables, facts, univariate patterns, missing data,
+ - Develop and save a predictive model to roll out for future use. Explore different techniques and share your findings about the approach and benefits of the champion model.
+ - Prescriptive recommendations if any
+ - K-means Clustering is optional (Bonus point)
+ - If you are comparing more than four different supervised algorithms (bonus point). You can utilize the Pyspark or spark-Scala platform for this Mini project.
 
 ### Dataset Description
 The dataset is from XYZ Bank's direct marketing campaigns via telephone calls.
@@ -24,7 +25,21 @@ df=spark.read \
  .option("sep",";")\
  .csv("/Users/brocktbennett/GitHub/Project Data/mini_project_2/XYZ_Bank_Deposit_Data_Classification-2.csv")
 print("There are",df.count(),"rows",len(df.columns),
-      "columns" ,"in the data.") 
+      "columns" ,"in the data.")
+
+
+## Data Dictionary: 
+ - 1 - Age (Numeric)
+ - 2 - Job: type of job (categorical)
+ - 3 - Marital: marital status (categorical)
+ - 4 - Education (categorical)
+ - 5 - Default: has credit in default? (categorical)
+ - 6 - Housing: has housing loan? (categorical)
+ - 7 - Loan: has personal loan? (categorical) regarding the latest contact in the ongoing campaign:
+ - 8 - Contact: contact communication type (categorical)
+ - 9 - Month: last contact month of year (categorical)
+ - 10 - Day_of_week: last contact day of the week (categorical)
+ - 11 - Duration: last contact duration, in seconds (numeric)
 
 ## Data Source Files: 
 The XYZ_Bank_Deposit_Data_Classification.csv file  is used to read in the original dataset.
@@ -110,3 +125,8 @@ lr.save("/path")
 pipelineModel = lr.load("/path")
 df = pipelineModel.transform(df)
 
+  other attributes:
+ - 12 - Campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
+ - 13 - Pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)
+ - 14 - Previous: number of contacts performed before this campaign and for this client (numeric)
+ - 15 - Poutcome: outcome of the previous marketing campaign (categorical)
