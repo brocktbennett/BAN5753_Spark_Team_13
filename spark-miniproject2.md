@@ -27,9 +27,6 @@ print("There are",df.count(),"rows",len(df.columns),
       "columns" ,"in the data.") 
 
 
-# Pickled_models
-- In our pickled models folder we have 
-
 # Dataset Overview
 
 ## Timeframe
@@ -95,6 +92,9 @@ print("There are",df.count(),"rows",len(df.columns),
 3. **Documentation**:
    - `README.md`: Project details and instructions.
    - `report.docx` or `presentation.pptx`: Detailed analysis and findings.
+
+# Pickled_models
+- Since we used four different machine learning models, our pipeline does not include the ML models in the final stage.  Instead, the pipeline exports a dataset ready to be loaded into one of the four models.  Each of the four models is also serialized.Ensure that the dataframe that is loaded in from the pre-processing pipeline uses the same naming convention, as follows: ppl_pickle_df=ppl_pickle_model.transform(df)
 
 ### Saving and Loading Models
 ```python
