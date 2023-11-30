@@ -26,6 +26,10 @@ df=spark.read \
 print("There are",df.count(),"rows",len(df.columns),
       "columns" ,"in the data.") 
 
+## Data Source Files: 
+The XYZ_Bank_Deposit_Data_Classification.csv file  is used to read in the original dataset.
+The df file is a parquet file that incorporates feature engineering performed prior to loading into the pipeline.  
+
 
 # Dataset Overview
 
